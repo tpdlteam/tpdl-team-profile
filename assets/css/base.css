@@ -1,0 +1,217 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-family: Poppins;
+  font-weight: 200;
+  src: url('../fonts/Poppins-ExtraLight.ttf');
+}
+
+@font-face {
+  font-family: Poppins;
+  font-weight: 300;
+  src: url('../fonts/Poppins-Light.ttf');
+}
+
+@font-face {
+  font-family: Poppins;
+  font-weight: 400;
+  src: url('../fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+  font-family: Poppins;
+  font-weight: 500;
+  src: url('../fonts/Poppins-Medium.ttf');
+}
+
+@font-face {
+  font-family: Poppins;
+  font-weight: 600;
+  src: url('../fonts/Poppins-SemiBold.ttf');
+}
+
+body {
+  transition: all ease 0.25s;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.6rem;
+  font-family: Poppins, san-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --intro-background-color: #111111;
+  --content-background: #ffffff;
+  --section-title-color: #ffffff;
+  --section-subtitle-color: #d6d6d6;
+  --project-title-color: #111111;
+  --project-description-color: #111111;
+  --project-sub-description-color: #b3b3b3;
+  --project-link-color: #000000;
+  --social-link-color: #a58220;
+  --scroll-bar-track-background: #ffffff;
+  --scroll-bar-thumb-background: #333333;
+  --scroll-bar-thumb-border: #ffffff;
+
+  --section-title-font: 200 7rem /1.2 Poppins, sans-serif;
+  --section-subtitle-font: 400 1.4rem Poppins, sans-serif;
+
+  --project-title-font: 7rem Poppins, sans-serif;
+  --project-description-font: 1.3rem /1.8 Poppins, sans-serif;
+  --project-author-font: 1.2rem /1.8 Poppins, sans-serif;
+  --project-link-font: 500 1.6rem Poppins, sans-serif;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--scroll-bar-track-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-bar-thumb-background);
+  border: solid 1px var(--scroll-bar-thumb-border);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  padding: 2.5px;
+}
+
+::placeholder {
+  font-family: Poppins;
+  font-size: 1.6rem;
+}
