@@ -1,6 +1,8 @@
 const heroContent = document.querySelector(".content__hero");
 const logoPath = document.querySelector("#logo__path");
-
+const contentAnimation = document.querySelector(".content__animation");
+const lineContent = document.querySelector(".content__animation_line");
+const headerLogo = document.querySelector('#header__logo');
 const path = document.querySelector("#line__path");
 
 const pathLength = path.getTotalLength();
@@ -11,67 +13,48 @@ path.style.strokeDashoffset = pathLength;
 
 path.getBoundingClientRect();
 
+const pathLengthObj = {
+  5: 200,
+  6: 400,
+  7: 550,
+  8: 750,
+  9: 800,
+  10: 900,
+  11: 1000,
+  12: 1100,
+  13: 1200,
+  14: 1300,
+  15: 1450,
+  16: 1650,
+  17: 2000,
+  18: 2500,
+  19: 2700,
+  20: 2800,
+  21: 2900,
+  22: 3000,
+  23: 3200,
+  24: 3300,
+  25: 3450,
+};
+
 window.addEventListener("scroll", function (e) {
   const documentScrollTop = document.documentElement.scrollTop;
 
-  const scrollPercentage =
-    (document.documentElement.scrollTop + document.body.scrollTop) /
-    (document.documentElement.scrollHeight -
-      document.documentElement.clientHeight);
   if (documentScrollTop < 600) {
     const currentPosY = documentScrollTop / 3;
     heroContent.style.transform = `translateY(-${currentPosY}px)`;
   }
-  const drawLength = pathLength * scrollPercentage;
 
-  if (documentScrollTop >= 50 && documentScrollTop < 400) {
-    path.style.strokeDashoffset = pathLength - drawLength;
-  }
-
-  console.log(documentScrollTop);
-
-  if (documentScrollTop < 3000) {
-    if (documentScrollTop < 800) {
+  if (documentScrollTop <= 2500) {
+    if (documentScrollTop < 500) {
       path.style.strokeDashoffset = pathLength;
     }
 
-    if (documentScrollTop >= 600) {
-      path.style.strokeDashoffset = pathLength - drawLength - 200;
+    if (documentScrollTop >= 500) {
+      const currentScrollTop = Math.floor(documentScrollTop / 100);
+      const currentLength = pathLengthObj[currentScrollTop];
+      path.style.strokeDashoffset = pathLength - currentLength;
     }
-
-    if (documentScrollTop >= 800) {
-      path.style.strokeDashoffset = pathLength - drawLength - 400;
-    }
-
-    if (documentScrollTop >= 1200) {
-      path.style.strokeDashoffset = pathLength - drawLength - 600;
-    }
-
-    if (documentScrollTop >= 1600) {
-      path.style.strokeDashoffset = pathLength - drawLength - 800;
-    }
-
-    if (documentScrollTop >= 1800) {
-      path.style.strokeDashoffset = pathLength - drawLength - 1300;
-    }
-
-    if (documentScrollTop >= 1800) {
-      path.style.strokeDashoffset = pathLength - drawLength - 1600;
-    }
-
-    if (documentScrollTop >= 2000) {
-      path.style.strokeDashoffset = pathLength - drawLength - 1900;
-    }
-
-    if (documentScrollTop >= 2300) {
-      path.style.strokeDashoffset = pathLength - drawLength - 2300;
-    }
-  }
-
-  if (scrollPercentage >= 0.99) {
-    path.style.strokeDasharray = "none";
-  } else {
-    path.style.strokeDasharray = pathLength + " " + pathLength;
   }
 
   if (documentScrollTop >= 3000) {
@@ -80,17 +63,26 @@ window.addEventListener("scroll", function (e) {
   if (documentScrollTop < 3000) {
     logoPath.style.fill = "white";
   }
-});
 
-// details information
-const detailsInformation = document.querySelector(".details_informations");
-
-const viewDetails = (number) => {
-  if (number) {
-    detailsInformation.classList.toggle("show");
-    setTimeout(() => (document.body.style.overflowY = "hidden"), 500);
-  } else {
-    detailsInformation.classList.remove("show");
-    document.body.style.overflowY = "scroll";
+  if (documentScrollTop >= 2300) {
+    if (!contentAnimation.classList.contains("show"))
+      setTimeout(() => {
+        contentAnimation.classList.add("show");
+      }, 1000);
+      setTimeout(() => {
+        contentAnimation.style.zIndex = '-1';
+      }, 2250);
   }
-};
+  if (documentScrollTop >= 2500) {
+    setTimeout(() => (lineContent.style.height = "100vh"), 500);
+  }
+  if (documentScrollTop < 2500) {
+    lineContent.style.height = "0vh";
+  }
+  if (documentScrollTop >= 6800) {
+    headerLogo.style.opacity = '0';
+  }
+  if (documentScrollTop < 6800) {
+    headerLogo.style.opacity = '1';
+  }
+});
