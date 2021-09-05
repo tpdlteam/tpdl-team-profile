@@ -290,14 +290,35 @@ path {
   margin-left: 1rem;
 }
 
-.project__link--icon .fa-square,
+/* .project__link--icon .fa-square,
 .project__link--icon .fa-external-link-square-alt {
   position: absolute;
   font-size: 2.3rem;
   top: 0;
+} */
+
+/* .fa-external-link-square-alt {
+  opacity: 0;
+} */
+
+.icon__link,
+.icon__link__hover {
+  position: absolute;
 }
 
-.fa-external-link-square-alt {
+svg.icon__link {
+  height: 16px;
+  width: 16px;
+  margin-top: 2px;
+}
+
+svg.icon__link__hover {
+  width: 17px;
+  height: 17px;
+  margin-bottom: 3px;
+}
+
+.icon__link__hover {
   opacity: 0;
 }
 
@@ -309,14 +330,14 @@ path {
 .project__link:hover {
   background: var(--project-link-color);
   color: var(--section-title-color);
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
 }
 
-.project__link:hover .project__link--icon .fa-square {
+.project__link:hover .project__link--icon .icon__link {
   opacity: 0;
 }
 
-.project__link:hover .project__link--icon .fa-external-link-square-alt {
+.project__link:hover .project__link--icon .icon__link__hover {
   opacity: 1;
 }
 
