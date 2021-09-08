@@ -785,3 +785,11 @@ path {
   font-size: 1.6rem;
   color: white;
 }
+
+#fb-customer-chat {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 150px;
+  height: 150px;
+}
