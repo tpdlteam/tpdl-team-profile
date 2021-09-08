@@ -389,7 +389,12 @@
       </div>
     </div> -->
   </div>
-  <script>
+
+  <div id="fb-customer-chat" attribution="setup-tool" page_id="108306764916127" theme_color="#000000"
+    logged_in_greeting="Xin chào, TPDL Team có thể giúp gì cho bạn ?"
+    logged_out_greeting="Xin chào, TPDL Team có thể giúp gì cho bạn ?">
+  </div>
+  <script defer>
     const chatbox = document.getElementById('fb-customer-chat');
     chatbox.setAttribute("page_id", "108306764916127");
     chatbox.setAttribute("attribution", "biz_inbox");
@@ -402,7 +407,7 @@
     };
 
     (function (d, s, id) {
-      const js, fjs = d.getElementsByTagName(s)[0];
+      var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s);
       js.id = id;
@@ -410,10 +415,6 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   </script>
-  <div id="fb-customer-chat" attribution="setup-tool" page_id="108306764916127" theme_color="#000000"
-    logged_in_greeting="Xin chào, TPDL Team có thể giúp gì cho bạn ?"
-    logged_out_greeting="Xin chào, TPDL Team có thể giúp gì cho bạn ?">
-  </div>
 
   <script src="./script.js"></script>
 </body>
