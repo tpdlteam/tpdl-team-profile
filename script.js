@@ -1,5 +1,5 @@
 const heroContent = document.querySelector(".content__hero");
-const logoPath = document.querySelector("#logo__path");
+const logoSVG = document.querySelector("#logo__svg");
 const contentAnimation = document.querySelector(".content__animation");
 const lineContent = document.querySelector(".content__animation_line");
 const headerLogo = document.querySelector('#header__logo');
@@ -57,11 +57,12 @@ window.addEventListener("scroll", function (e) {
     }
   }
 
-  if (documentScrollTop >= 3000) {
-    logoPath.style.fill = "black";
+  if (documentScrollTop >= 2700) {
+    logoSVG.classList.add('logo__black');
   }
-  if (documentScrollTop < 3000) {
-    logoPath.style.fill = "white";
+  console.log(documentScrollTop);
+  if (documentScrollTop < 2700) {
+    logoSVG.classList.remove('logo__black');
   }
 
   if (documentScrollTop >= 2300) {
