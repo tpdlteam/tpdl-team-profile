@@ -1,9 +1,8 @@
-const heroContent = document.querySelector(".content__hero");
 const logoSVG = document.querySelector("#logo__svg");
 const contentAnimation = document.querySelector(".content__animation");
-const lineContent = document.querySelector(".content__animation_line");
-const headerLogo = document.querySelector('#header__logo');
+const headerLogo = document.querySelector("#header__logo");
 const path = document.querySelector("#line__path");
+const logoLink = document.querySelectorAll(".logo__link");
 
 const pathLength = path.getTotalLength();
 
@@ -26,7 +25,7 @@ const pathLengthObj = {
   14: 1300,
   15: 1450,
   16: 1650,
-  17: 2000,
+  17: 1900,
   18: 2500,
   19: 2700,
   20: 2800,
@@ -35,55 +34,73 @@ const pathLengthObj = {
   23: 3200,
   24: 3300,
   25: 3450,
+  26: 4000,
 };
+
+window.addEventListener("load", function (e) {
+  const documentScrollTop = document.documentElement.scrollTop;
+  const currentScrollTop = Math.floor(documentScrollTop / 100);
+  let currentLength;
+  if (currentScrollTop >= 27) currentLength = pathLengthObj[26];
+  if (currentScrollTop < 27) currentLength = pathLengthObj[currentScrollTop];
+  path.style.strokeDashoffset = pathLength - currentLength;
+
+  if (documentScrollTop >= 2500) {
+    if (!contentAnimation.classList.contains("show")) {
+      contentAnimation.classList.add("show");
+      console.log(contentAnimation);
+      setTimeout(() => (contentAnimation.style.zIndex = "-1"), 500);
+    }
+  }
+  if (documentScrollTop < 2500) {
+    if (contentAnimation.classList.contains("show")) {
+      contentAnimation.style.zIndex = "2";
+      contentAnimation.classList.remove("show");
+    }
+  }
+});
 
 window.addEventListener("scroll", function (e) {
   const documentScrollTop = document.documentElement.scrollTop;
 
-  if (documentScrollTop < 600) {
-    const currentPosY = documentScrollTop / 3;
-    heroContent.style.transform = `translateY(-${currentPosY}px)`;
-  }
-
-  if (documentScrollTop <= 2500) {
-    if (documentScrollTop < 500) {
-      path.style.strokeDashoffset = pathLength;
+  if (documentScrollTop <= 2600) {
+    if (documentScrollTop <= 500) {
+      path.style.strokeDashoffset = pathLength - 250;
     }
 
-    if (documentScrollTop >= 500) {
+    if (documentScrollTop > 500) {
       const currentScrollTop = Math.floor(documentScrollTop / 100);
       const currentLength = pathLengthObj[currentScrollTop];
       path.style.strokeDashoffset = pathLength - currentLength;
     }
   }
 
-  if (documentScrollTop >= 2700) {
-    logoSVG.classList.add('logo__black');
+  if (documentScrollTop >= 3100) {
+    logoSVG.classList.add("logo__black");
   }
-  console.log(documentScrollTop);
-  if (documentScrollTop < 2700) {
-    logoSVG.classList.remove('logo__black');
+  if (documentScrollTop < 3100) {
+    logoSVG.classList.remove("logo__black");
   }
 
-  if (documentScrollTop >= 2300) {
-    if (!contentAnimation.classList.contains("show"))
-      setTimeout(() => {
-        contentAnimation.classList.add("show");
-      }, 1000);
-      setTimeout(() => {
-        contentAnimation.style.zIndex = '-1';
-      }, 2250);
-  }
   if (documentScrollTop >= 2500) {
-    setTimeout(() => (lineContent.style.height = "100vh"), 500);
+    if (!contentAnimation.classList.contains("show")) {
+      contentAnimation.classList.add("show");
+      setTimeout(() => (contentAnimation.style.zIndex = "-1"), 500);
+    }
   }
+
   if (documentScrollTop < 2500) {
-    lineContent.style.height = "0vh";
-  }
-  if (documentScrollTop >= 6800) {
-    headerLogo.style.opacity = '0';
-  }
-  if (documentScrollTop < 6800) {
-    headerLogo.style.opacity = '1';
+    if (contentAnimation.classList.contains("show")) {
+      contentAnimation.style.zIndex = "2";
+      contentAnimation.classList.remove("show");
+    }
   }
 });
+
+for (let i = 0; i < logoLink.length; i++) {
+  logoLink[i].onclick = (e) => {
+    e.preventDefault();
+    document.documentElement.scrollTop = 0;
+    document.documentElement.style.scrollBehavior = 'smooth';
+  };
+}

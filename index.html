@@ -16,9 +16,8 @@
   <div class="main">
     <!-- Navbar -->
     <div class="navbar">
-      <a id="header__logo" href="/" class="logo">
-        <svg id="logo__svg" width="100" height="30" viewBox="0 0 227 148" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
+      <a id="header__logo" onclick="scrollTop(e)" class="logo logo__link">
+        <svg id="logo__svg" width="50" height="30" viewBox="0 0 227 148" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M127.433 130.279L127.433 -9.48775e-06L148.305 -1.13248e-05L148.305 132L193 132L193 148L82 148L84.2137 130.279L127.433 130.279Z" />
           <path
@@ -30,19 +29,6 @@
             d="M227 45.8606C227 57.3885 224.588 66.6966 219.765 73.7852C215.011 80.8021 208.405 85.9216 199.947 89.1437C191.489 92.3657 181.807 93.9768 170.902 93.9768L152.866 93.9768L152.866 148L132 148L132 0L170.273 -6.6918e-06C187.889 -9.77186e-06 201.73 3.75906 211.796 11.2772C221.932 18.7237 227 30.2515 227 45.8606ZM204.98 46.0754C204.98 35.192 201.904 27.5307 195.753 23.0914C189.671 18.6521 181.842 16.4325 172.265 16.4325L152.866 16.4325L152.866 77.222L171.95 77.222C178.382 77.222 184.079 76.2912 189.042 74.4296C194.005 72.568 197.885 69.3817 200.681 64.8708C203.547 60.3599 204.98 54.0948 204.98 46.0754Z" />
           <path d="M126 148L126 0L152.154 -4.57291e-06L152.154 131.465L211 131.465L208.728 148L126 148Z" fill="black" />
         </svg>
-        <!-- <svg id="logo__svg_hover" width="100" height="30" viewBox="0 0 227 148" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M127.433 130.279L127.433 -9.48775e-06L148.305 -1.13248e-05L148.305 132L193 132L193 148L82 148L84.2137 130.279L127.433 130.279Z" />
-          <path
-            d="M5.89093e-06 102.139C4.88995e-06 90.6115 2.4117 81.3033 7.2351 74.2148C11.9886 67.1979 18.5946 62.0784 27.053 58.8563C35.5114 55.6343 45.1931 54.0232 56.0982 54.0232L74.1335 54.0232L74.1335 -1.05963e-05L95 -1.24329e-05L95 148L56.7274 148C39.1115 148 25.2704 144.241 15.2042 136.723C5.06807 129.276 7.2463e-06 117.748 5.89093e-06 102.139ZM22.0199 101.925C22.0199 112.808 25.0957 120.469 31.2472 124.909C37.3289 129.348 45.1582 131.567 54.7351 131.567L74.1336 131.567L74.1335 70.7779L55.0497 70.7779C48.6185 70.7779 42.9213 71.7088 37.9581 73.5704C32.9948 75.432 29.1152 78.6183 26.319 83.1292C23.4529 87.6401 22.0199 93.9052 22.0199 101.925Z" />
-          <path d="M101 -6.1501e-06L101 148L74.846 148L74.846 16.5349L16 16.5349L18.2722 1.1314e-06L101 -6.1501e-06Z" />
-          <path
-            d="M100.158 17.7213L100.158 148L79.0978 148L79.0978 15.5L34 15.5L34 0L146 -1.95827e-05L143.766 17.7213L100.158 17.7213Z" />
-          <path
-            d="M227 45.8606C227 57.3885 224.588 66.6966 219.765 73.7852C215.011 80.8021 208.405 85.9216 199.947 89.1437C191.489 92.3657 181.807 93.9768 170.902 93.9768L152.866 93.9768L152.866 148L132 148L132 0L170.273 -6.6918e-06C187.889 -9.77186e-06 201.73 3.75906 211.796 11.2772C221.932 18.7237 227 30.2515 227 45.8606ZM204.98 46.0754C204.98 35.192 201.904 27.5307 195.753 23.0914C189.671 18.6521 181.842 16.4325 172.265 16.4325L152.866 16.4325L152.866 77.222L171.95 77.222C178.382 77.222 184.079 76.2912 189.042 74.4296C194.005 72.568 197.885 69.3817 200.681 64.8708C203.547 60.3599 204.98 54.0948 204.98 46.0754Z" />
-          <path d="M126 148L126 0L152.154 -4.57291e-06L152.154 131.465L211 131.465L208.728 148L126 148Z" fill="black" />
-        </svg> -->
       </a>
     </div>
     <!-- Hero content -->
@@ -56,8 +42,7 @@
           You do!? Scroll down...
         </div>
       </div>
-      <div id="hero__line" class="hero__line">
-      </div>
+
     </div>
     <!-- Intro content -->
     <div class="section intro">
@@ -66,25 +51,18 @@
           I'm Arron, I design and develop Webflow sites for clients all over the world
         </div>
         <div class="intro__line">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 2200" width="1200" height="2200"
-            preserveAspectRatio="xMidYMid meet"
-            style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px);">
+          <svg style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px);" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0)">
+              <path id="line__path"
+                d="M600.711 0C600.711 0 600.711 247.846 600.711 310.825C600.711 373.803 587.228 521.411 374.764 628.05C152.857 739.428 123.396 983.178 128.517 1175.95C133.556 1365.61 203.819 1590.65 355.589 1726.79C448.417 1810.06 600.473 1898.7 712.51 1836.11C765.342 1806.6 770.863 1718.58 735.775 1689.3C701.442 1660.66 648.382 1664.49 610.637 1710.35C536.495 1800.42 602.554 1945.35 600.653 2409.15C600.394 2472.5 601.213 3444.56 601.213 3514.63"
+                stroke="white" stroke-width="2" />
+            </g>
             <defs>
-              <clipPath id="__lottie_element_103">
-                <rect width="1200" height="2200" x="0" y="0"></rect>
+              <clipPath id="clip0">
+                <rect width="1200" height="3509" fill="white" />
               </clipPath>
             </defs>
-            <g clip-path="url(#__lottie_element_103)">
-              <g transform="matrix(1,0,0,1,624.25,300.5)" opacity="1" style="display: block;">
-                <g opacity="1" transform="matrix(1,0,0,1,-2,0)">
-                  <path id="line__path" stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0"
-                    stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="2"
-                    d=" M-22,-302 C-22,-302 -22,-260 -22,-206 C-22,-152 -36.1870002746582,-25.43600082397461 -259.75,66 C-493.25,161.5 -524.25,370.5 -518.8610229492188,535.7869873046875 C-513.5590209960938,698.4140014648438 -439.625,891.3670043945312 -279.927001953125,1008.1010131835938 C-182.25,1079.5 -22.25,1155.5 95.63899993896484,1101.8370361328125 C151.2310028076172,1076.531005859375 157.04100036621094,1001.0560302734375 120.12000274658203,975.9550170898438 C83.99299621582031,951.3939819335938 28.160999298095703,954.6820068359375 -11.555000305175781,994 C-89.57099914550781,1071.2340087890625 -20.06100082397461,1195.5 -22.06100082397461,1593.177001953125 C-22.333999633789062,1647.4969482421875 -21.5,1840.9200439453125 -21.5,1901">
-                  </path>
-                </g>
-              </g>
-              <g transform="matrix(1,0,0,1,600,1100)" opacity="1" style="display: block;"></g>
-            </g>
           </svg>
         </div>
       </div>
@@ -270,70 +248,6 @@
           </div>
         </div>
       </div>
-      <!-- Member list -->
-      <!-- <div class="content__team">
-        <div class="content__title">Our team</div>
-        <div class="members">
-          <div class="member">
-            <img src="./assets/images/member_thinh.jpeg" alt="" class="avatar">
-            <div class="member__information">
-              <div class="information">
-                <div class="information__name">
-                  <span>Full name:</span> Huynh Ngoc Thinh
-                </div>
-                <div class="information__major">
-                  <span>Major:</span> Front-end Developer
-                </div>
-              </div>
-              <div class="view__details" onclick="viewDetails(1)">View Details <i class="ti-arrow-right"></i>
-              </div>
-            </div>
-          </div>
-          <div class="member">
-            <img src="./assets/images/member_phuoc.jpg" alt="" class="avatar">
-            <div class="member__information">
-              <div class="information">
-                <div class="information__name">
-                  <span>Full name:</span> Phan Minh Phuoc
-                </div>
-                <div class="information__major">
-                  <span>Major:</span> Front-end Developer
-                </div>
-              </div>
-              <div class="view__details" onclick="viewDetails(2)">View Details <i class="ti-arrow-right"></i>
-              </div>
-            </div>
-          </div>
-          <div class="member">
-            <img src="./assets/images/member_long.jpg" alt="" class="avatar">
-            <div class="member__information">
-              <div class="information">
-                <div class="information__name">
-                  <span>Full name:</span> Nguyen Hoang Long
-                </div>
-                <div class="information__major">
-                  <span>Major:</span> Back-end Developer
-                </div>
-              </div>
-              <div class="view__details" onclick="viewDetails(3)">View Details <i class="ti-arrow-right"></i></div>
-            </div>
-          </div>
-          <div class="member">
-            <img src="./assets/images/member_duy.png" alt="" class="avatar">
-            <div class="member__information">
-              <div class="information">
-                <div class="information__name">
-                  <span>Full name:</span> Tran Khanh Duy
-                </div>
-                <div class="information__major">
-                  <span>Major:</span> Design
-                </div>
-              </div>
-              <div class="view__details" onclick="viewDetails(4)">View Details <i class="ti-arrow-right"></i></div>
-            </div>
-          </div>
-        </div>
-      </div> -->
       <!-- Form contact and social links -->
       <div class="content__contact">
         <div class="contact__title mb__3">Interested in working together?</div>
@@ -398,95 +312,53 @@
       </div>
       <!-- Footer -->
       <footer class="footer">
-
-        <div class="copyright">©2021 All rights reversed. TPDL Team</div>
+        <div class="copyright">© 2021 All rights reversed. TPDL Team</div>
       </footer>
       <!-- Animation between intro and main content -->
       <div class="content__animation">
-        <div class="content__animation_line"></div>
       </div>
       <!-- Contact to messenger -->
     </div>
-    <!-- <div class="details_informations">
-      <div class="back__btn" onclick="viewDetails()">
-        <i class="fas fa-arrow-left"></i>
-        Back
-      </div>
-      <div class="informations__section">
-        <div class="top__card">
-          <div class="photos">
-            <div class="background"></div>
-            <div class="avatar"></div>
-          </div>
-        </div>
-        <div class="informations__card">
-          <div class="information name">
-            Huynh Ngoc Thinh
-          </div>
-          <div class="information">
-            Web Developer
-          </div>
-          <div class="information">
-            +84 899 236 266
-          </div>
-          <div class="information">
-            thinhhuynh@flow-idra.com
-          </div>
-          <div class="information">
-            Thua Thien Hue, Viet Nam
-          </div>
-        </div>
-        <div class="pv__cards">
-          <div class="pv__card">
-            <div class="pv__title">Skills</div>
-            <div class="skills__card">
-              <div class="skill">
-                <i class="fab fa-js"></i>
-              </div>
-              <div class="skill">
-                <i class="fab fa-node"></i>
-              </div>
-              <div class="skill">
-                <i class="fab fa-react"></i>
-              </div>
-            </div>
-          </div>
-          <div class="pv__card">
-            <div class="pv__title">Experience</div>
-            <div class="pv__informations">
-              <div class="pv__information">
-                <img
-                  src="https://media-exp1.licdn.com/dms/image/C560BAQEI9Qc07GI2qg/company-logo_100_100/0/1627527053107?e=1639008000&v=beta&t=0z3ZZyDGuxTOckQb92LYPbFRk_9fCBa2Ag3C9Evm_hM"
-                  alt="">
-                <div class="pv__details">
-                  <div class="major">Web Developer</div>
-                  <div class="name">FLOW_IDRA LIMITED COMPANY <span class="time__work">Full-time</span></div>
-                  <div class="time">Jul 2021 - Present</div>
-                  <div class="address">Hue, Vietnam</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="pv__card">
-            <div class="pv__title">Education</div>
-            <div class="pv__informations">
-              <div class="pv__information">
-                <img
-                  src="https://scontent.fsgn2-2.fna.fbcdn.net/v/t1.6435-9/116437552_3144120008996885_421682238055872373_n.png?_nc_cat=100&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=R7RJ5weLrxAAX9B6jUS&_nc_ht=scontent.fsgn2-2.fna&oh=9b7551e23065afdd6fd3820d4df47a46&oe=615A0B14"
-                  alt="">
-                <div class="pv__details">
-                  <div class="major">Hue University Of Sciences</div>
-                  <div class="name">University, Information Technology</div>
-                  <div class="time">2018 - 2022</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
   </div>
   <script src="./script.js"></script>
+  <div id="fb-root"></div>
+
+  <!-- Your Plugin chat code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
+
+  <!-- Messenger Plugin chat Code -->
+  <div id="fb-root"></div>
+
+  <!-- Your Plugin chat code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
+
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "108306764916127");
+    chatbox.setAttribute("attribution", "biz_inbox");
+
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v11.0'
+      });
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <div class="fb-customerchat" attribution="setup-tool" page_id="108306764916127" theme_color="#000000"
+    logged_in_greeting="Xin chào, TPDL Team có thể giúp gì cho bạn ?"
+    logged_out_greeting="Xin chào, TPDL Team có thể giúp gì cho bạn ?">
+  </div>
 </body>
 
 </html>
